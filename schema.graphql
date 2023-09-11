@@ -1,0 +1,14 @@
+type Book {
+    id: Int!
+    title: String!
+}
+type pageContent {
+    text: String!
+    path: String!
+}
+
+type Query {
+    ru: [pageContent]!
+    en: [pageContent]!
+    books: [Book]!
+}
