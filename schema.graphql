@@ -1,14 +1,39 @@
+
+
 type Book {
     id: Int!
     title: String!
 }
+type types {
+    type1: [Book]!
+    type2: [Book]!
+    type3: [Book]!
+}
 type pageContent {
-    text: String!
-    path: String!
+    element: String!
+}
+type titles {
+    p_text: String!
+}
+type dataOtEn {
+    el_en: [pageContent]!
+    rewards_en: [pageContent]!
+    dpe: [titles]!
+}
+type dataOtRu {
+    el_ru: [pageContent]!
+    rewards_ru: [pageContent]!
+    dpr: [titles]!
+}
+type dataOtDe {
+    el_de: [pageContent]!
+    rewards_de: [pageContent]!
+    dpd: [titles]!
 }
 
 type Query {
-    ru: [pageContent]!
-    en: [pageContent]!
-    books: [Book]!
+    ru: [dataOtRu]!
+    en: [dataOtEn]!
+    de: [dataOtDe]!
+    books: [types]!
 }

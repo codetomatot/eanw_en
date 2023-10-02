@@ -1,0 +1,46 @@
+/* .main_r {
+    background-color: rgb(219, 210, 198);
+} */
+
+.card_t-1, .card_t-2, .card_t-3 {
+    position: relative;
+    left: 15%;
+    top: 100px;
+    width: 70%;
+    padding: 8px;
+    margin: 4px;
+    margin-bottom: 100px;
+    color: #211919;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 2;
+}
+
+.card_t-1 {
+    background: rgba(255,255,255,0.45);
+    margin-top: 100px;
+}
+.card_t-2 {
+    margin-top: 550px;
+}
+
+.card_t-2, .card_t-3 {
+    background: rgba(255, 255, 255, 0.24);
+}
+.i_m {
+    position: relative;
+    z-index: 2;
+}
+
+#v_i, #f_i {
+    width: 40%;
+    height: 60%;
+}
+
+/* .rewards {
+    width: 300px;
+    height: 330px;
+} */
