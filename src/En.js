@@ -44,15 +44,15 @@ function getCards(data) {
   let indices = [0];
   let card_list = [];
   if(data.en) {
-    for(let j = 0; j < data.en.length; j++) {
-        if(data.en[j].element === '<!--θ-->') {
+    for(let j = 0; j < data.en[0].el_en.length; j++) {
+        if(data.en[0].el_en[j].element === '<!--θ-->') {
           indices.push(j);
         }
     }
     console.log(indices);
-    const card_1 = data.en.slice(indices[0], indices[1]);
-    const card_2 = data.en.slice(indices[1], indices[2]);
-    const card_3 = data.en.slice(indices[2], data.en.length);
+    const card_1 = data.en[0].el_en.slice(indices[0], indices[1]);
+    const card_2 = data.en[0].el_en.slice(indices[1], indices[2]);
+    const card_3 = data.en[0].el_en.slice(indices[2], data.en[0].el_en.length);
     card_list = [card_1, card_2, card_3];
   }
   return card_list;
@@ -63,7 +63,9 @@ function getCards(data) {
 function getEnglish(callBack) {
     const query = `query {
       en {
-        element
+        el_en {
+          element
+        }
       }
     }`;
     return fetch("/graphql", {

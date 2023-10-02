@@ -65,6 +65,8 @@ function DropDown(props) {
       </div>
     )
   }
+  let necPath = window.location.pathname.toString().split("/")[1] || window.location.pathname.toString().split("/")[0]; //relating to awards path
+
   return (
     <div className='dropdown' style={{height: menuHeight, zIndex: "3"}}>
       <CSSTransition in={activeMenu === "main"}
@@ -84,9 +86,9 @@ function DropDown(props) {
       onEnter={calcHeight}>
         <div className='menu'>
           <DropDownItem leftIcon={<AiOutlineArrowLeft />} goToMenu="main">Back</DropDownItem>
-          <DropDownItem><Link to={""+(window.location.pathname).toString()} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>Русский</Link></DropDownItem>
-          <DropDownItem><Link to={"/en"+(window.location.pathname).toString()} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>English</Link></DropDownItem>
-          <DropDownItem><Link to={"/de"+(window.location.pathname).toString()} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>Deutsch</Link></DropDownItem>
+          <DropDownItem><Link to={"/"+necPath} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>Русский</Link></DropDownItem>
+          <DropDownItem><Link to={"/en"+necPath} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>English</Link></DropDownItem>
+          <DropDownItem><Link to={"/de"+necPath} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>Deutsch</Link></DropDownItem>
         </div>
       </CSSTransition>
     </div>
