@@ -38,7 +38,10 @@ export default function Rewards() {
                 </div> 
             : <div>
                 <h1>Gedenkmedaillen und Ehrenpreise der Akademie</h1>
-                <div className="reward_grid">{mapImages(imageList, "de", data, setPopup)}</div>
+                <div className="reward_grid">
+                    {mapImages(imageList, "de", data, setPopup, setImg, setImgIdx)}
+                </div>
+                {popup ? <>{exec(data, img, imgIdx, "de", poup, setPopup)}</> : null}
             </div>) }
         </div>
     );

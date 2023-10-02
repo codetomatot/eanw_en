@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
 import './App.css';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation, redirect } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import Library from './img_data/libstock.jpg';
-import { AiOutlineArrowLeft, AiOutlineSetting } from "react-icons/ai";
+import { AiOutlineArrowLeft, AiOutlineSetting, AiFillHome } from "react-icons/ai";
 import {BiCog} from "react-icons/bi";
 import { FaChevronRight } from "react-icons/fa";
 
@@ -65,7 +65,8 @@ function DropDown(props) {
       </div>
     )
   }
-  let necPath = window.location.pathname.toString().split("/")[1] || window.location.pathname.toString().split("/")[0]; //relating to awards path
+  let necPath = window.location.pathname.toString().split("/").slice(1) || window.location.pathname.toString().split("/")[0] || ""; //for safety
+  console.log(necPath);
 
   return (
     <div className='dropdown' style={{height: menuHeight, zIndex: "3"}}>
@@ -75,6 +76,7 @@ function DropDown(props) {
       classNames="menu-primary"
       onEnter={calcHeight}>
         <div className='menu'>
+          <DropDownItem leftIcon={<AiFillHome />}><Link to="/" style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>Home</Link></DropDownItem>
           <DropDownItem leftIcon={<BiCog />} rightIcon={<FaChevronRight />} goToMenu="settings">Set Language</DropDownItem>
         </div>
       </CSSTransition>
@@ -87,8 +89,8 @@ function DropDown(props) {
         <div className='menu'>
           <DropDownItem leftIcon={<AiOutlineArrowLeft />} goToMenu="main">Back</DropDownItem>
           <DropDownItem><Link to={"/"+necPath} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>Русский</Link></DropDownItem>
-          <DropDownItem><Link to={"/en"+necPath} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>English</Link></DropDownItem>
-          <DropDownItem><Link to={"/de"+necPath} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>Deutsch</Link></DropDownItem>
+          <DropDownItem><Link to={"/en/"+necPath} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>English</Link></DropDownItem>
+          <DropDownItem><Link to={"/de/"+necPath} style={{color: '#fff', textDecoration: 'none', fontSize: '16px'}}>Deutsch</Link></DropDownItem>
         </div>
       </CSSTransition>
     </div>

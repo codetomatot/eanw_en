@@ -62,7 +62,7 @@
   top: 58px;
   width: 300px;
   transform: translateX(-45%);
-  background-color: #3f4649;
+  background-color: #181b22;
   color: #fff;
   list-style: none;
   border-radius: 8px;
@@ -80,7 +80,7 @@
   padding: 0.5rem;
 }
 .menu-item:hover {
-  background-color: #3f4649;
+  background-color: #3d606f;
 }
 .red-important {
   height: 50px;
