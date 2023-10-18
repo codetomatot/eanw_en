@@ -1,8 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./Card.css";
 import Img1 from "./img_data/img1.png";
-import Vlad from "./img_data/vlad_tym.png";
+import Tyminskiy from "./img_data/vlad_tym.png";
 import Farber from "./img_data/farber.png";
+import Vartanyan from "./img_data/m-vartanian.jpg";
+import Gorbunov from "./img_data/gorbunov.jpg";
+import Jiang from "./img_data/Dawei-Jiang.jpg";
+import Kulev from "./img_data/kulev.jpg";
+import NesmeyanovAA from "./img_data/nesmeyanov-a.jpg";
+import NesmeyanovNA from "./img_data/n_na.jpg";
+import Rub from "./img_data/jacob-rub.jpg";
+import Tashiyev from "./img_data/Tashiev.jpg";
+import Chernobelsky from "./img_data/chernobelskii.jpg";
+import Mingding from "./img_data/Li-Mingding.jpg";
+
 import { Link } from 'react-router-dom';
 
 

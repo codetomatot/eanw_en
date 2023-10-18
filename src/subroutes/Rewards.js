@@ -41,7 +41,7 @@ export default function Rewards() {
                 <div className="reward_grid">
                     {mapImages(imageList, "de", data, setPopup, setImg, setImgIdx)}
                 </div>
-                {popup ? <>{exec(data, img, imgIdx, "de", poup, setPopup)}</> : null}
+                {popup ? <>{exec(data, img, imgIdx, "de", popup, setPopup)}</> : null}
             </div>) }
         </div>
     );
@@ -75,7 +75,7 @@ const exec = (data, currentImg, idx, lang, pop_state, setPopState) => {
         return (
             <div>
                 <div className="pos"></div>
-                <div className="pop-container">
+                <div className="popup-container">
                 <button className="closer" onClick={() =>  setPopState(false)}><AiOutlineClose /></button>
                 <img src={currentImg} style={{display: 'inline-flex'}} className="new_img_ext" />
                 <div dangerouslySetInnerHTML={{__html: data.de[0].rewards_de[idx].element}}></div>
